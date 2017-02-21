@@ -56430,6 +56430,7 @@ static int pager_lock_db(Pager *pPager, int eLock){
 ** variable to locktype before returning.
 */
 static int pager_wait_on_lock(Pager *pPager, int locktype){
+  return 0;    /* FIXME Porting to RTOS: cfr. fcntl() */
   int rc;                              /* Return code */
   do {
     rc = pager_lock_db(pPager,locktype);
